@@ -17,7 +17,7 @@ int _values_path(char **arg, char **env)
 	if (!path_rela)
 		return (-1);
 	token = strtok(path_rela, ":");
-	len = _strlen(*arg); 
+	len = _strlen(*arg);
 	while (token)
 	{
 		value_path = _strlen(token);
@@ -30,7 +30,6 @@ int _values_path(char **arg, char **env)
 		path_absol = strcpy(path_absol, token);
 		_strcat(path_absol, "/");
 		_strcat(path_absol, *arg);
-
 		if (stat(path_absol, &stat_lineptr) == 0)
 		{
 			*arg = path_absol;
